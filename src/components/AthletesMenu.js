@@ -1,7 +1,9 @@
-import React, {Component} from 'react';
+'use strict';
+
+import React from 'react';
 import { Link } from 'react-router';
 
-export default class AthletesMenu extends Component {
+export default class AthletesMenu extends React.Component {
   render() {
     return (
       <nav className="athletes-menu">

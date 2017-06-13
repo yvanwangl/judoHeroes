@@ -1,3 +1,5 @@
+'use strict';
+
 import React from 'react';
 import AthletePreview from './AthletePreview';
 import athletes from '../data/athletes';

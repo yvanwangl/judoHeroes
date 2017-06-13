@@ -1,23 +1,23 @@
-import React, {Component} from 'react';
+'use strict';
+
+import React from 'react';
 
 const typeMap = {
-    'G':'Gold',
-    'S':'Silver',
-    'B':'Bronze'
+  'G': 'Gold',
+  'S': 'Silver',
+  'B': 'Bronze'
 };
 
-export default class Modal extends Component {
-    
-    render(){
-        const {type, year, city, event, category} = this.props;
-        return (
-            <li className='modal'>
-                <span className={`symbol symbol-${type}`} title={typeMap[type]}>{type}</span>
-                <span className="year">{year}</span>
-                <span className="city"> {city}</span>
-                <span className="event"> ({event})</span>
-                <span className="category"> {category}</span>
-            </li>
-        )
-    }
+export default class Medal extends React.Component {
+  render() {
+    return (
+      <li className="medal">
+        <span className={`symbol symbol-${this.props.type}`} title={typeMap[this.props.type]}>{this.props.type}</span>
+        <span className="year">{this.props.year}</span>
+        <span className="city"> {this.props.city}</span>
+        <span className="event"> ({this.props.event})</span>
+        <span className="category"> {this.props.category}</span>
+      </li>
+    );
+  }
 }
