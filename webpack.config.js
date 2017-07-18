@@ -10,11 +10,12 @@ module.exports = {
   entry: path.join(__dirname, 'src', 'app-client.js'),
   devServer: {
     inline: true,
+    hot: true,
     port: 3333,
+    progress: true,
+    open: true,
     contentBase: "src/static/",
-    historyApiFallback: {
-      index: '/index-static.html'
-    }
+    historyApiFallback: true
   },
   output: {
     path: path.join(__dirname, 'src', 'static', 'js'),
@@ -31,7 +32,9 @@ module.exports = {
       }
     }]
   },
-  plugins: debug ? [] : [
+  plugins: debug ? [
+    new webpack.HotModuleReplacementPlugin()
+  ] : [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),
